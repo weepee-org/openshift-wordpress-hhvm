@@ -1,3 +1,4 @@
 FROM weepee-registry/hhvm-webserver
-# Your App
-ADD app /app
+# Remove and mount attached storage
+RUN rm -fr /app/*
+ADD wordpress /wordpress
