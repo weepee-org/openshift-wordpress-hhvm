@@ -17,4 +17,6 @@ oc create -f hhvm/Route.yaml
 oc start-build hhvm
 
 echo "mysql"
-oc process -f MysqlTemplate.yaml -v MYSQL_DATABASE=wordpress-hhvm,VOLUME_CAPACITY=512Mi | oc create -f -
+PASSWORD=$(openssl rand 12 -base64)
+echo "DB wordpress USER wordpress PASSWORD ${PASSWORD}"
+oc process -f MysqlTemplate.yaml -v MYSQL_DATABASE=wordpress,VOLUME_CAPACITY=512Mi,MYSQL_USER=wordpress,MYSQL_PASSWORD=${PASSWORD} | oc create -f -
