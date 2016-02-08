@@ -13,7 +13,7 @@ spec:
   source:
     git:
       ref: master
-      uri: https://github.com/weepee-org/openshift-example-project.git
+      uri: https://github.com/weepee-org/openshift-wordpress-hhvm.git
     contextDir: hhvm/
     type: Git
   strategy:

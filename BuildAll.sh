@@ -1,6 +1,6 @@
 #!/bin/bash
 
-oc new-project example \
+oc new-project wordpress-hhvm \
     --description="WordPress HHVM" \
     --display-name="WordPress HHVM"
 
