@@ -5,7 +5,7 @@ oc new-project wordpress-hhvm \
     --display-name="WordPress HHVM"
 
 oc create -f Gluster-Service.yaml
-oc create -f Gluster-Endpoint.yaml
+oc create -f Gluster-Endpoints.yaml
 oc create -f PersistentVolumeClaim.yaml
 
 echo "hhvm"
