@@ -1,9 +1,7 @@
-# openshift-example-project
+# openshift-wordpress-hhvm
 
 Example project running:
-- static static webserver
-- php webserver
-- hhvm webserver
+- hhvm webserver running wordpress
 
 ### Installation
 
@@ -12,60 +10,15 @@ You need oc (https://github.com/openshift/origin/releases) locally installed:
 create a new project
 
 ```sh
-> oc new-project example \
-    --description="Examples - static, php, mojo, hhvm, proxy" \
-    --display-name="Examples"
+> oc new-project example-wordpress-hhvm \
+    --description="Example WordPress HHVM" \
+    --display-name="Example WordPress HHVM"
 ```
 
-build static webserver
+build it all
 
 ```sh
-> oc create -f static/BuildConfig.yaml
-> oc create -f static/ImageStream.yaml
-> oc create -f static/DeploymentConfig.yaml
-> oc create -f static/Services.yaml
-> oc start-build static
-```
-
-build php webserver
-
-```sh
-> oc create -f php/BuildConfig.yaml
-> oc create -f php/ImageStream.yaml
-> oc create -f php/DeploymentConfig.yaml
-> oc create -f php/Services.yaml
-> oc start-build php
-```
-
-build mojo webserver
-
-```sh
-> oc create -f mojo/BuildConfig.yaml
-> oc create -f mojo/ImageStream.yaml
-> oc create -f mojo/DeploymentConfig.yaml
-> oc create -f mojo/Services.yaml
-> oc start-build mojo
-```
-
-build hhvm webserver
-
-```sh
-> oc create -f hhvm/BuildConfig.yaml
-> oc create -f hhvm/ImageStream.yaml
-> oc create -f hhvm/DeploymentConfig.yaml
-> oc create -f hhvm/Services.yaml
-> oc start-build hhvm
-```
-
-build proxy server for glueing all above together
-
-```sh
-> oc create -f proxy/BuildConfig.yaml
-> oc create -f proxy/ImageStream.yaml
-> oc create -f proxy/DeploymentConfig.yaml
-> oc create -f proxy/Services.yaml
-> oc create -f proxy/Route.yaml
-> oc start-build proxy
+> ./BuildAll.sh
 ```
 
 #### Modifications for integrating in a private repository
