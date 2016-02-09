@@ -4,7 +4,7 @@ STAMP=$(date)
 
 if [ ! -f /app/index.php ]; then
   echo "[${STAMP}] Installing wordpress..."
-  cp -vfpr /wordpress/* /app/
+  cp -vfr /wordpress/* /app/
 fi
 
 echo "[${STAMP}] Starting daemon..."
