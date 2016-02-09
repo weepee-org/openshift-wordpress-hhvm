@@ -25,12 +25,12 @@ build it all
 
 create an ssh deploy key without passphrase
 ```sh
-> ssh-keygen -f ~/.ssh/openshift-my-static-site
+> ssh-keygen -f ~/.ssh/openshift-wordpress-hhvm
 ```
 
 ```sh
-> oc secrets new-sshauth openshift-my-static-site --ssh-privatekey=/home/joeri/.ssh/openshift-my-static-site
-> oc secrets add serviceaccount/builder secrets/openshift-my-static-site
+> oc secrets new-sshauth openshift-wordpress-hhvm --ssh-privatekey=/home/joeri/.ssh/openshift-wordpress-hhvm
+> oc secrets add serviceaccount/builder secrets/openshift-wordpress-hhvm
 ```
 
 Update the BuildConfig
@@ -44,7 +44,7 @@ Update the BuildConfig
 Add your key to the deploy keys of you repository on GitHub
 
 ```sh
-> cat ~/.ssh/openshift-my-static-site.pub
+> cat ~/.ssh/openshift-wordpress-hhvm.pub
 ```
 
 #### Route-production.yml
